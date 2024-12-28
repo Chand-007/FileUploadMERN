@@ -1,0 +1,118 @@
+/* Container for the entire page */
+.listfilesContainer {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Heading for the page */
+  .listfilesContainer h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  /* Styling for the file list sections */
+  .listfilesContainer h2 {
+    font-size: 1.5rem;
+    color: #444;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  /* Button styles */
+  .listfilesContainer button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  /* Button hover effect */
+  .listfilesContainer button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  /* File item styling */
+  .listfilesContainer div {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styling for each file in the list */
+  .listfilesContainer h4 {
+    font-size: 1rem;
+    color: #333;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Styling for the file actions (delete, download) */
+  .listfilesContainer button {
+    margin-left: 10px;
+    font-size: 0.9rem;
+  }
+  
+  .listfilesContainer button:first-of-type {
+    background-color: #dc3545;
+  }
+  
+  .listfilesContainer button:first-of-type:hover {
+    background-color: #c82333;
+  }
+  
+  .listfilesContainer button:last-of-type {
+    background-color: #28a745;
+  }
+  
+  .listfilesContainer button:last-of-type:hover {
+    background-color: #218838;
+  }
+  
+  /* Media query for responsiveness on smaller screens */
+  @media (max-width: 768px) {
+    .listfilesContainer {
+      padding: 15px;
+      margin: 20px;
+    }
+  
+    .listfilesContainer h1 {
+      font-size: 1.5rem;
+    }
+  
+    .listfilesContainer h2 {
+      font-size: 1.2rem;
+    }
+  
+    .listfilesContainer h4 {
+      font-size: 0.9rem;
+    }
+  
+    .listfilesContainer button {
+      width: 100%;
+      margin-top: 10px;
+    }
+  
+    .listfilesContainer div {
+      padding: 15px;
+    }
+  }
+  

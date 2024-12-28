@@ -1,0 +1,60 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.entrypointContainer{
+    width:100vw;
+    height:100vh;
+    padding:0;
+    margin: 0;
+    background-color: rgb(235, 247, 251);
+    position:relative;
+}
+
+.indeximage{
+    margin-top:10px;
+    width:700px;
+    height:500px;
+    background-color: red;
+    margin-left: 10px;
+}
+
+.indeximage img{
+    width:inherit;
+    height:inherit;
+    object-fit: cover;
+}
+
+h2{
+    text-align: center;
+    text-transform: uppercase;
+    color: #1e3a8a;
+    text-indent:2em;
+}
+
+.buttonContainer{
+    position:absolute;
+    right:100px;
+    top:200px;
+    display:flex;
+    flex-direction: column;
+    row-gap: 70px;
+    width:500px;
+    height:200px;
+    padding:10px;
+}
+
+.buttonContainer .Link{
+    height:50px;
+    border:0;
+    background-color: rgb(212, 207, 207);
+    color:rgb(102, 99, 99);
+    text-decoration: none;
+    text-align: center;
+    font-size: 35px;
+}
+
+
+

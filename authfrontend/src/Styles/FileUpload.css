@@ -1,0 +1,160 @@
+/* Container for the entire page */
+.file-upload-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styling for the file upload form */
+  .uploadForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .uploadForm label {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .uploadForm input[type="file"] {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    font-size: 1rem;
+  }
+  
+  .uploadForm button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .uploadForm button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Styling for the file metadata table */
+  .file-metadata-container {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .file-metadata-container h3 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .file-metadata-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .file-metadata-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+  }
+  
+  .file-metadata-table td:first-child {
+    font-weight: bold;
+    color: #444;
+  }
+  
+  .file-metadata-table tr:nth-child(even) {
+    background-color: #f4f4f4;
+  }
+  
+  .file-metadata-table tr:hover {
+    background-color: #eaeaea;
+  }
+  
+  /* Link styles */
+  .link-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .link-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 600px) {
+    .file-upload-container {
+      padding: 15px;
+      margin: 20px;
+    }
+  
+    .uploadForm input[type="file"] {
+      width: 100%;
+    }
+  
+    .uploadForm button {
+      width: 100%;
+    }
+  
+    .file-metadata-container {
+      padding: 15px;
+    }
+  
+    .file-metadata-table td {
+      font-size: 0.9rem;
+    }
+  }
+
+  /* Styling for the paragraph */
+.file-upload-container p {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  /* Styling for the links */
+  .file-upload-container .navlink {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  /* Hover effects for the links */
+  .file-upload-container .navlink:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  /* Optional: Add a spacing between the two links */
+  .file-upload-container .navlink + .navlink {
+    margin-left: 20px;
+  }
+  
+  
