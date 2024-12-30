@@ -15,9 +15,9 @@ Features
 
 2. File Management:
 
-       2.1 File Upload: Users can upload files to the server securely.
+        2.1 File Upload: Users can upload files to the server securely.
 
-       2.2 File Sharing: Share uploaded files with others through shareable IDs.
+        2.2 File Sharing: Share uploaded files with others through shareable IDs.
 
 
 Tech Stack
