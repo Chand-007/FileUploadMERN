@@ -3,21 +3,21 @@ The app incorporates JWT authentication for user sessions and provides seamless 
 
 Features
 
-Authentication:
+1. Authentication:
 
-Register: Allows new users to create an account.
+1.1 Register: Allows new users to create an account.
 
-Sign In: Authenticate users with their email and password.
+1.2 Sign In: Authenticate users with their email and password.
 
-JWT Authentication: Securely manage user sessions using JSON Web Tokens.
+1.3 JWT Authentication: Securely manage user sessions using JSON Web Tokens.
 
-Logout: Safely terminate user sessions.
+1.4 Logout: Safely terminate user sessions.
 
-File Management:
+2. File Management:
 
-File Upload: Users can upload files to the server securely.
+2.1 File Upload: Users can upload files to the server securely.
 
-File Sharing: Share uploaded files with others through shareable IDs.
+2.2 File Sharing: Share uploaded files with others through shareable IDs.
 
 
 Tech Stack
