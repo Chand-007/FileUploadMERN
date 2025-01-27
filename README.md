@@ -12,11 +12,11 @@ This is a file sharing application that allows users to sign up, log in, upload 
 
 ## Technologies Used
 
-- **Backend**: [Your backend technology here, e.g., Node.js, Python, etc.]
-- **Frontend**: [Your frontend technology here, e.g., React, Angular, etc.]
-- **Database**: [Your database solution here, e.g., MongoDB, MySQL, etc.]
-- **File Storage**: [Your file storage solution here, e.g., AWS S3, local storage, etc.]
-- **Authentication**: [JWT, OAuth, etc.]
+- **Backend**: Nodejs, ExpressJS
+- **Frontend**: ReactJS
+- **Database**: MongoDB
+- **File Storage**: Multer
+- **Authentication**: JWT
 
 ## Getting Started
 
@@ -34,6 +34,6 @@ Make sure you have the following installed:
 ### Installation
 
 1. Clone the repository:
-   git clone https://github.com/your-username/file-sharing-app.git
+   git clone 
 2. Add From mail in MailConfig.js file in authbackend folder
 3. Add your JWT secret key in authController.js and create a .env file in authbackend folder with JWT_SECRET_KEY 
