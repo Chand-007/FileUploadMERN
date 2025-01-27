@@ -1,53 +1,39 @@
-This is a MERN stack (MongoDB, Express.js, React.js, Node.js) application designed for secure file uploads and sharing. 
-The app incorporates JWT authentication for user sessions and provides seamless user experiences for file handling and account management. 
+# File Sharing Application
 
-Features
+This is a file sharing application that allows users to sign up, log in, upload files, and share those files with other users. It provides a simple and secure way to manage and share your files online.
 
-1. Authentication:
+## Features
 
-      1.1 Register: Allows new users to create an account.
+- **Account Signup**: Create a new user account.
+- **Sign In**: Log into the application with your credentials.
+- **Sign Out**: Securely sign out of your account.
+- **File Upload**: Upload files to your account.
+- **File Sharing**: Share uploaded files with other registered users.
 
-      1.2 Sign In: Authenticate users with their email and password.
+## Technologies Used
 
-      1.3 JWT Authentication: Securely manage user sessions using JSON Web Tokens.
+- **Backend**: [Your backend technology here, e.g., Node.js, Python, etc.]
+- **Frontend**: [Your frontend technology here, e.g., React, Angular, etc.]
+- **Database**: [Your database solution here, e.g., MongoDB, MySQL, etc.]
+- **File Storage**: [Your file storage solution here, e.g., AWS S3, local storage, etc.]
+- **Authentication**: [JWT, OAuth, etc.]
 
-      1.4 Logout: Safely terminate user sessions.
+## Getting Started
 
-2. File Management:
+To get a local copy of the project, follow these simple steps:
 
-        2.1 File Upload: Users can upload files to the server securely.
+### Prerequisites
 
-        2.2 File Sharing: Share uploaded files with others through shareable IDs.
+Make sure you have the following installed:
+- [Node.js](https://nodejs.org/) (if using Node.js)
+- [npm](https://www.npmjs.com/) (or [yarn](https://yarnpkg.com/) if preferred)
+- A code editor (e.g., [VS Code](https://code.visualstudio.com/))
+- React Installed in system
+- MongoDB database listening on port 27017
 
+### Installation
 
-Tech Stack
-
-Frontend:
-
-React.js: For building an interactive user interface.
-
-React Router: For client-side routing and navigation.
-
-Axios: For making HTTP requests to the backend.
-
-Backend:
-
-Node.js: For handling server-side logic.
-
-Express.js: For building RESTful APIs.
-
-JWT (jsonwebtoken): For authentication and session management.
-
-Multer: For handling file uploads.
-
-Database:
-
-MongoDB: For storing user data and metadata about uploaded files.
-
-Other Tools and Libraries:
-
-bcrypt.js: For hashing and securing user passwords.
-
-cors: For enabling cross-origin resource sharing.
-
-Local Storage: For storing uploaded files.
+1. Clone the repository:
+   git clone https://github.com/your-username/file-sharing-app.git
+2. Add From mail in MailConfig.js file in authbackend folder
+3. Add your JWT secret key in authController.js and create a .env file in authbackend folder with JWT_SECRET_KEY 
