@@ -36,4 +36,7 @@ Make sure you have the following installed:
 1. Clone the repository:
    git clone https://github.com/Chand-007/FileUploadMERN.git
 2. Add From mail in MailConfig.js file in authbackend folder
-3. Add your JWT secret key in authController.js and create a .env file in authbackend folder with JWT_SECRET_KEY 
+3. Add your JWT secret key in authController.js and create a .env file in authbackend folder with JWT_SECRET_KEY
+4. RUN npm start in authfrontend folder
+5. Spinup mongoDB Database
+6. RUN node server.js in authbackend folder
