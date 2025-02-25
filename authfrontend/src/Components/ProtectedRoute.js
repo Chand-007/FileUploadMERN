@@ -4,35 +4,35 @@ import axios from 'axios';
 import { authenticate } from '../Services/authService';
 
 const ProtectedRoute = () => {
-    const [isAuthenticated, setIsAuthenticated] = useState(null);  // State to track authentication status
+    const [isAuthenticated, setIsAuthenticated] = useState(null);  
     const token = localStorage.getItem("token");
 
     useEffect(() => {
-        // Check if there is a token and authenticate the user
+        
         if (token) {
             authenticate(token)
                 .then((message) => {
                     if (message["message"] === "Authenticated") {
-                        setIsAuthenticated(true);  // User is authenticated
+                        setIsAuthenticated(true);  
                     } else {
-                        setIsAuthenticated(false);  // Authentication failed
+                        setIsAuthenticated(false);  
                     }
                 })
                 .catch((error) => {
                     console.error("Authentication error:", error);
-                    setIsAuthenticated(false);  // Failed to authenticate
+                    setIsAuthenticated(false);  
                 });
         } else {
-            setIsAuthenticated(false);  // No token, so not authenticated
+            setIsAuthenticated(false);  
         }
-    }, [token]);  // Effect runs when the token changes
+    }, [token]);  
 
-    // If authentication state is not determined yet, you can show a loading spinner or something else
+   
     if (isAuthenticated === null) {
         return <div>Loading...</div>;
     }
 
-    // If authenticated, render the protected routes (Outlet), otherwise redirect to login
+  
     return isAuthenticated ? <Outlet /> : <Navigate to="/login" />;
 };
 

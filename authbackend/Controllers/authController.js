@@ -5,14 +5,15 @@ const {sendOTP} = require("./MailConfig")
 const speakeasy = require("speakeasy");
 const fs = require("fs")
 const path = require("path")
-
+require("dotenv").config()
 
 const register = async (req,res)=>{
-    console.log("Hitting register URL")
+    
     const {username,email,password,role} = req.body
 
     try{
         const existingUSer = await User.findOne({email})
+
         if(existingUSer){
             return res.status(400).json({message:"User Already Exists"})
         }
@@ -27,7 +28,7 @@ const register = async (req,res)=>{
 }
 
 const login = async (req,res)=>{
-    console.log("Hitting Login URL")
+
     const {email,password} = req.body
 
     try{
@@ -44,34 +45,48 @@ const login = async (req,res)=>{
         }
 
         const secret = speakeasy.generateSecret({length:20})
+
         const otp = speakeasy.totp({ secret: secret.base32, encoding: 'base32' });
+
         console.log("Logging OTP",otp)
+
         user.mfaSecret = secret.base32;
+
         await user.save();
+
         await sendOTP(user.email, otp);
+
         res.status(200).json({ message: "OTP sent", mfaRequired: true });
+
     }
     catch(error){
+
         return res.status(500).json({message:"Server Error"})
     }
 }
 
 
 const verifyOTP = async (req,res)=>{
+
     const {email,otp} = req.body
+
     console.log("Adding Logging Statements",email,otp)
+
     const user = await User.findOne({email})
+
     console.log("Logging other attributes",user.email,user.mfaSecret)
 
     if(!user || !user.mfaSecret){
         return res.status(400).json({message:"User not found or MFA not enabled"})
     }
 
+    console.log("Checking Verify OTP function",user.mfaSecret)
+
     const isValidOTP = speakeasy.totp.verify({
         secret: user.mfaSecret,
         encoding: 'base32',
         token: otp,
-        window: 1 // Allow for a slight time window (to account for clock drift)
+        window: 1 
     });
 
     if (!isValidOTP) {
@@ -109,42 +124,57 @@ const authenticate = (req,res,next)=>{
         return res.status(401).json({message:"No Token Provided"})
     }
 
-    jwt.verify(token,"#Enter your secret here",(error,decoded)=>{
+    jwt.verify(token,process.env.JWT_SECRET,(error,decoded)=>{
+
         if(error){
             return res.status(401).json({message:"Token is Invalid"})
         }
 
         req.userId = decoded.userId
+
         next()
     })
 }
 
 const getAllRecord = async (req,res)=>{
+
     const allRecords = await User.find()
     return res.status(200).json({AllRecords:allRecords})
 
 }
 
 const uploadHandle = async (req,res)=>{
+
+
     if(! req.file){
         return res.status(400).send({message:"No File Uploaded"})
     }
 
+
     const fileMetadata = new FileAttributes({
-    userId: req.userId,  // Use the user ID from the JWT token
-    filePath: req.file.path,  // Store the file path
+
+    userId: req.userId, 
+
+    filePath: req.file.path,
+
     originalName: req.file.originalname,
+
     fileSize: req.file.size,
+
     fileType: req.file.mimetype,
+
     })
 
 
     try{
+
         const savedFile = await fileMetadata.save()
+
         res.status(200).send({
             message:"File Uploaded Successfully",
             fileMetadata:savedFile
         })
+
     }
     catch(error){
         res.status(500).send({message:"error saving file metadata",error:error.message})
@@ -197,7 +227,7 @@ const downloadFileById = async (req,res)=>{
             return res.status(404).json({error:"File not Found"})
         }
 
-        res.download(path.join("#Enter you folder path here",file.filePath),file.originalName,(err)=>{
+        res.download(path.join("authbackend/uploads",file.filePath),file.originalName,(err)=>{
             if(err){
                 res.status(500).send("Error downloading file")
             }

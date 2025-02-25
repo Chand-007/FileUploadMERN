@@ -32,8 +32,8 @@ export default function Login(){
         try {
             const response = await axios.post("http://localhost:5000/api/auth/verifyotp", { email, otp });
             const token = response.data.token;
-            localStorage.setItem("token", token); // Store JWT token in localStorage
-            history("/homepage"); // Redirect to protected route
+            localStorage.setItem("token", token);
+            history("/homepage"); 
         } catch (err) {
             setError(err.response.data.message || "OTP verification failed");
         }
@@ -63,7 +63,7 @@ export default function Login(){
                 <Link to='/register'>Register Here</Link>
                 </div>
             ) : (
-                <form onSubmit={handleVerifyOtp}>
+                <form className="otp-form" onSubmit={handleVerifyOtp}>
                     <input
                         type="text"
                         placeholder="Enter OTP"

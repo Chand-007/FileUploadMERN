@@ -29,17 +29,20 @@ export default function Register(){
     }
 
     return(
+        <>
+        <h1>Register Page</h1>
         <div className='registerContainer'>
-            <h2>Register Page</h2>
-              <form onSubmit={handleSubmit}>
-               <input type='text' name='username' value={formData.username} onChange={handleChange} placeholder='Username'/>
-               <input type='email' name="email" value={formData.email} onChange={handleChange} placeholder='Email'/>
-                <input type='password' name='password' value={formData.password} onChange={handleChange} placeholder='Password'/>
-                <input type='text' name='role' value={formData.role} onChange={handleChange} placeholder="Admin,User,Guest"/>
-               <button type='submit'>Register</button>
-            </form>
-          <Link className="Link" to='/login'>Login</Link>
-        </div>
+            <form onSubmit={handleSubmit}>
+             <input type='text' name='username' value={formData.username} onChange={handleChange} placeholder='Username'/>
+             <input type='email' name="email" value={formData.email} onChange={handleChange} placeholder='Email'/>
+              <input type='password' name='password' value={formData.password} onChange={handleChange} placeholder='Password'/>
+              <input type='text' name='role' value={formData.role} onChange={handleChange} placeholder="Admin,User,Guest"/>
+             <button type='submit'>Register</button>
+          </form>
+        <Link className="Link" to='/login'>Login</Link>
+      </div>
+        </>
+        
         
     )
 }

@@ -1,4 +1,4 @@
-const express = require("express")
+ const express = require("express")
 const {register,login,logout,authenticate,getAllRecord,verifyOTP,uploadHandle,getUserFiles,deleteFileById,downloadFileById,getAllOtherFiles} = require("../Controllers/authController")
 const {upload,authenticateJWT} = require("../Controllers/FileUpload")
 const router = express.Router()
